@@ -23,7 +23,7 @@ function ubuntucountdown_block($op = 'list', $delta = '', $edit = array()) {
           '#type' => 'textfield',
           '#title' => t('Release date'),
           '#size' => 60,
-          '#description' => t('Release date in ISO format YYYY-MM-DD or "over".'),
+          '#description' => t('Release date in ISO format YYYY-MM-DD (HH:MM) or "over".'),
           '#default_value' => variable_get('cdown_release_date', '1970-01-01'),
         );
         $form['uri_base'] = array(
@@ -90,7 +90,7 @@ function ubuntucountdown_contents()
     $uri = variable_get('cdown_uri_base', NULL);
     if ($uri === NULL)
         return t('Set URI pattern on block configuration page.');
-    $diff = (strtotime($release) - time())/(24.0*3600);
+    $diff = ceil((strtotime($release) - time())/(24.0*3600));
     if ($release == 'over' || $diff < 0)
         return myimage(
                      variable_get('cdown_over_uri', ''),
