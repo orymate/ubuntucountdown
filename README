@@ -1,0 +1,6 @@
+Ubuntu release count down module for Drupal.
+
+1. Copy *.{module,info} files to a directory in sites/*/modules.
+2. Allow module on admin/build/modules.
+3. Configure block on admin/build/block/configure/ubuntucountdown/cdown.
+4. Enable block on admin/build/block.
