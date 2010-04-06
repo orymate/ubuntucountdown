@@ -29,7 +29,7 @@ function ubuntucountdown_block($op = 'list', $delta = '', $edit = array()) {
         $form['uri_base'] = array(
           '#type' => 'textfield',
           '#title' => t('URI template for image'),
-          '#description' => t('You can use printf-style tokens for count value.'),
+          '#description' => t('You can use <a href="http://php.net/sprintf">printf-style</a> tokens for day count value.'),
           '#size' => 60,
           '#default_value' => variable_get('cdown_uri_base', 'http://example.com/files/cdown/1004/%02d.png'),
         );
